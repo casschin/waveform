@@ -85,14 +85,15 @@ function App() {
       setTotalDuration(totalDurationRef.current);
     }
   }
-  function handleFinish(currentIndex: number) {
-    const totalAudioCount = filenames.length;
-    const isLastAudio = currentIndex + 1 === totalAudioCount;
+  function handleFinish(audioId: number) {
+    const position = audios.indexOf(audioId);
+    const totalAudioCount = audios.length;
+    const isLastAudio = position === totalAudioCount - 1;
     if (isLastAudio) {
       setPlayState("stopped");
       setActiveAudio(0);
     } else {
-      setActiveAudio(currentIndex + 1);
+      setActiveAudio(position + 1);
     }
   }
 
@@ -151,7 +152,7 @@ function App() {
                     name={name}
                     width={width}
                     playState={audioPlayState}
-                    onFinish={() => handleFinish(index)}
+                    onFinish={() => handleFinish(audioId)}
                     onReady={handleOnReady}
                     totalDuration={totalDuration}
                     onClick={() => {
@@ -247,7 +248,6 @@ function Waveform({
         wavesurferStatusRef.current = "ready";
         setWaveformStatus("ready");
         const peaks = await wavesurferInstance.exportPCM(1024, 10000, true);
-        console.log("TCL: peaks", JSON.parse(peaks));
         onReady({ duration, peaks: JSON.parse(peaks), id: audioId });
       });
       wavesurferInstance.on("finish", function() {
