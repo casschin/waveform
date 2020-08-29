@@ -1476,10 +1476,10 @@
     "@types/react-dom" "*"
     "@types/testing-library__dom" "*"
 
-"@types/wavesurfer.js@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@types/wavesurfer.js/-/wavesurfer.js-3.2.0.tgz#9d72f7d720380ed22e7f070372afd566de6d67a7"
-  integrity sha512-qwzUfxbXhcEMSseDSEMlDtGR6XefET4jB1hU3PxapCCkSrNZOkkSXVNAoj0bNRmaJnK407qS/BOvhKqghh6grg==
+"@types/wavesurfer.js@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/wavesurfer.js/-/wavesurfer.js-3.3.1.tgz#e276ca371b382072b894b57a166c5f6ecdfb4964"
+  integrity sha512-TpWT5eW57ZyhH7uOlHBAnQ+kpp5f+lyjaoGSYk5q447U9ulIOm5eUURiYBIZUlIZqrL0Levaniq8flnug0ir0w==
 
 "@types/yargs-parser@*":
   version "15.0.0"
